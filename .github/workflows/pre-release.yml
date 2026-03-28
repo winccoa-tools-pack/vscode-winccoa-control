@@ -33,23 +33,23 @@ jobs:
       workflows: |
         CI/CD Pipeline
         PR Labels
-        Git Flow Validation
       timeout_seconds: 1800
       poll_interval_seconds: 10
 
   pre-release:
     needs: [wait-required-workflows]
     if: ${{ always() && (github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && needs.wait-required-workflows.result == 'success')) }}
-    uses: ./.github/workflows/prerelease-reusable.yml
+    uses: winccoa-tools-pack/.github/.github/workflows/reusable-prerelease.yml@main
     with:
       target_branch: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
       validate_release_branch: ${{ github.event_name == 'pull_request' && startsWith(github.head_ref, 'release/v') }}
+      project_type: vscode
     secrets: inherit
 
   cleanup-old-prereleases:
     needs: [pre-release]
     if: always() && needs.pre-release.result == 'success'
-    uses: winccoa-tools-pack/.github/.github/workflows/cleanup-prereleases-by-branch-reusable.yml@main
+    uses: winccoa-tools-pack/.github/.github/workflows/reusable-cleanup-prereleases-by-branch.yml@main
     with:
       target_branch: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
       keep_latest: 1

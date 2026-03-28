@@ -12,7 +12,7 @@
     "url": "https://github.com/winccoa-tools-pack/vscode-winccoa-project-admin"
   },
   "engines": {
-    "vscode": "^1.109.2"
+    "vscode": "^1.110.0"
   },
   "categories": [
     "Other"
@@ -898,7 +898,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.6",
     "@types/node": "^25.5.0",
-    "@types/vscode": "^1.109.0",
+    "@types/vscode": "^1.110.0",
     "@typescript-eslint/eslint-plugin": "^8.56.0",
     "@typescript-eslint/parser": "^8.55.0",
     "@vscode/test-cli": "^0.0.12",
