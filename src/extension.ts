@@ -231,6 +231,14 @@ export async function activate(context: vscode.ExtensionContext): Promise<WinCCO
         );
 
         context.subscriptions.push(
+            vscode.commands.registerCommand('winccoa.manager.kill', async (item: unknown) => {
+                if (hasManagerData(item)) {
+                    await managerTreeProvider.killManager(item.managerData);
+                }
+            }),
+        );
+
+        context.subscriptions.push(
             vscode.commands.registerCommand('winccoa.manager.delete', async (item: unknown) => {
                 if (hasManagerData(item)) {
                     await managerTreeProvider.deleteManager(item);

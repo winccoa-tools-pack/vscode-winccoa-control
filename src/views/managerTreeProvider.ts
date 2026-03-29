@@ -273,6 +273,29 @@ export class ManagerTreeProvider implements vscode.TreeDataProvider<ManagerItem>
         }
     }
 
+    async killManager(managerData: ManagerDisplayData): Promise<void> {
+        if (!this.currentProjectId) {
+            vscode.window.showErrorMessage('No project selected');
+            return;
+        }
+
+        try {
+            ExtensionOutputChannel.info(
+                'ManagerTreeProvider',
+                `Killing manager ${managerData.idx} for project: ${this.currentProjectId}`,
+            );
+            const result = await this.pmon.killManager(this.currentProjectId, managerData.idx);
+            if (result === 0) {
+                vscode.window.showInformationMessage(`✓ Manager killed successfully`);
+            } else {
+                vscode.window.showErrorMessage(`Failed to kill manager (error code: ${result})`);
+            }
+            await this.loadManagers();
+        } catch (error) {
+            vscode.window.showErrorMessage(`Failed to kill manager: ${error}`);
+        }
+    }
+
     async restartManager(managerData: ManagerDisplayData): Promise<void> {
         if (!this.currentProjectId) {
             vscode.window.showErrorMessage('No project selected');
