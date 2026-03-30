@@ -28,9 +28,9 @@ rules:
     parameters:
       strict_required_status_checks_policy: true
       required_status_checks:
-        - context: "CI/CD Pipeline - Required"
+        - context: "ci-cd / CI/CD Pipeline - Required"
         - context: "PR Labels - Required"
-        - context: "Git Flow Validation - Required"
+        - context: "ci-cd / Validate Git Flow + Conventional Commits"
 
   - type: "required_linear_history"
     parameters: {}
