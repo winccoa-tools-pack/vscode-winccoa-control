@@ -20,10 +20,11 @@ jobs:
     if: |
       github.event_name == 'workflow_dispatch' ||
       github.event.workflow_run.conclusion == 'success'
-    uses: ./.github/workflows/prerelease-reusable.yml
+    uses: winccoa-tools-pack/.github/.github/workflows/reusable-prerelease.yml@main
     with:
       target_branch: ${{ github.event.workflow_run.head_branch || github.ref_name }}
       validate_release_branch: false
+      project_type: vscode
     secrets: inherit
 
   notify-success:
