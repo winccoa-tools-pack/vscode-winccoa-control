@@ -27,7 +27,7 @@ permissions:
 jobs:
   wait-required-workflows:
     if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository }}
-    uses: winccoa-tools-pack/.github/.github/workflows/wait-for-workflows-reusable.yml@main
+    uses: winccoa-tools-pack/.github/workflows/wait-for-workflows-reusable.yml@main
     with:
       sha: ${{ github.event.pull_request.head.sha }}
       workflows: |
@@ -39,7 +39,7 @@ jobs:
   pre-release:
     needs: [wait-required-workflows]
     if: ${{ always() && (github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && needs.wait-required-workflows.result == 'success')) }}
-    uses: winccoa-tools-pack/.github/.github/workflows/reusable-prerelease.yml@main
+    uses: winccoa-tools-pack/.github/workflows/reusable-prerelease.yml@main
     with:
       target_branch: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
       validate_release_branch: ${{ github.event_name == 'pull_request' && startsWith(github.head_ref, 'release/v') }}
@@ -49,7 +49,7 @@ jobs:
   cleanup-old-prereleases:
     needs: [pre-release]
     if: always() && needs.pre-release.result == 'success'
-    uses: winccoa-tools-pack/.github/.github/workflows/reusable-cleanup-prereleases-by-branch.yml@main
+    uses: winccoa-tools-pack/.github/workflows/reusable-cleanup-prereleases-by-branch.yml@main
     with:
       target_branch: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
       keep_latest: 1
