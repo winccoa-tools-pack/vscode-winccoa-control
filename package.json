@@ -89,6 +89,12 @@
         "icon": "$(debug-restart)"
       },
       {
+        "command": "winccoa.manager.kill",
+        "title": "Kill Manager",
+        "category": "WinCC OA",
+        "icon": "$(close)"
+      },
+      {
         "command": "winccoa.manager.delete",
         "title": "Delete Manager",
         "category": "WinCC OA",
@@ -283,6 +289,11 @@
           "command": "winccoa.manager.stop",
           "when": "view == winccoa.managerView && viewItem == manager",
           "group": "inline@4"
+        },
+        {
+          "command": "winccoa.manager.kill",
+          "when": "view == winccoa.managerView && viewItem =~ /^manager/",
+          "group": "manager@0"
         },
         {
           "command": "winccoa.manager.delete",
