@@ -80,7 +80,7 @@
         "command": "winccoa.manager.stop",
         "title": "Stop Manager",
         "category": "WinCC OA",
-        "icon": "$(stop)"
+        "icon": "$(debug-stop)"
       },
       {
         "command": "winccoa.manager.restart",
@@ -116,7 +116,7 @@
         "command": "winccoa.system.stop",
         "title": "Stop PMON",
         "category": "WinCC OA",
-        "icon": "$(stop)"
+        "icon": "$(debug-stop)"
       },
       {
         "command": "winccoa.system.restart",
@@ -134,7 +134,7 @@
         "command": "winccoa.project.stop",
         "title": "Stop Project",
         "category": "WinCC OA",
-        "icon": "$(stop)"
+        "icon": "$(debug-stop)"
       },
       {
         "command": "winccoa.openConfig",
@@ -565,7 +565,7 @@
         "modelDescription": "Stop a specific manager (process/component) in a WinCC OA project. Use when the user wants to stop a specific manager or troubleshoot a manager issue.",
         "canBeReferencedInPrompt": true,
         "toolReferenceName": "winccoa_manager_stop",
-        "icon": "$(stop)",
+        "icon": "$(debug-stop)",
         "userDescription": "Stop a specific manager in a WinCC OA project",
         "inputSchema": {
           "type": "object",
