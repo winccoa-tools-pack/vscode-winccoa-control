@@ -190,7 +190,9 @@ If the extension doesn't work as expected (project not detected, PMON commands f
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is proprietary software. All rights reserved — see the [LICENSE](LICENSE) file for details.
+
+Unauthorized copying, modification, distribution, or use of this software is strictly prohibited.
 
 ---
 
