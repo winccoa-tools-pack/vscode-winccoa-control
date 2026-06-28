@@ -2,9 +2,9 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-2.4.1-blue.svg)
+![VS Marketplace](https://img.shields.io/visual-studio-marketplace/v/RichardJanisch.winccoa-project-admin?label=VS%20Marketplace)
 ![License](https://img.shields.io/github/license/winccoa-tools-pack/vscode-winccoa-project-admin)
-![VS Code](https://img.shields.io/badge/VS%20Code-1.109.2-007ACC.svg)
+![VS Code](https://img.shields.io/badge/VS%20Code-%5E1.110.0-007ACC.svg)
 [![Coverage](https://codecov.io/gh/winccoa-tools-pack/vscode-winccoa-project-admin/graph/badge.svg)](https://codecov.io/gh/winccoa-tools-pack/vscode-winccoa-project-admin)
 [![Quality gate](https://github.com/winccoa-tools-pack/vscode-winccoa-project-admin/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/winccoa-tools-pack/vscode-winccoa-project-admin/actions/workflows/ci-cd.yml)
 [![Released](https://github.com/winccoa-tools-pack/vscode-winccoa-project-admin/actions/workflows/release.yml/badge.svg)](https://github.com/winccoa-tools-pack/vscode-winccoa-project-admin/actions/workflows/release.yml)
@@ -97,11 +97,11 @@
 Found an issue? Please report it with:
 
 - WinCC OA version
-- Extension version (`1.0.0`)
+- Extension version (see VS Code Extensions view)
 - Steps to reproduce the issue
 - Enable `DEBUG` logging and attach log output
 
-[Report Issue on GitHub](https://github.com/winccoa-tools-pack/vscode-winccoa-control/issues)
+[Report Issue on GitHub](https://github.com/winccoa-tools-pack/vscode-winccoa-project-admin/issues)
 
 ---
 
@@ -212,4 +212,4 @@ This core library is used by:
 ---
 <center>Made with ❤️ for and by the WinCC OA community</center>
 
-[GitHub](https://github.com/winccoa-tools-pack/vscode-winccoa-control) • [Issues](https://github.com/winccoa-tools-pack/vscode-winccoa-control/issues) • [WinCC OA Docs](https://www.winccoa.com)
+[GitHub](https://github.com/winccoa-tools-pack/vscode-winccoa-project-admin) • [Issues](https://github.com/winccoa-tools-pack/vscode-winccoa-project-admin/issues) • [WinCC OA Docs](https://www.winccoa.com)
